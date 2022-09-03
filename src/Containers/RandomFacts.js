@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Routes, Route, Link } from 'react-router-dom';
 
 const RandomFacts = () => {
-    const [randomFact, setRandomFact] = useState('')
+    const [randomFact, setRandomFact] = useState('');
 
     useEffect(() => {
         fetch('https://uselessfacts.jsph.pl/random.json?language=en')
         .then(res => res.json())
         .then(randomFact => setRandomFact(randomFact))
-    }, [])
+    }, []);
 
     return(
         <>
@@ -20,8 +20,8 @@ const RandomFacts = () => {
             </ul>
             <button>Get A New Fact</button>
         </>
-    )
+    );
 
 }
 
-export default RandomFacts
+export default RandomFacts;
