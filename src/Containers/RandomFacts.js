@@ -5,14 +5,10 @@ const RandomFacts = () => {
     const [randomFact, setRandomFact] = useState('')
 
     useEffect(() => {
-        getRandomFacts()
-    }, [])
-
-    const getRandomFacts = () => {
         fetch('https://uselessfacts.jsph.pl/random.json?language=en')
         .then(res => res.json())
         .then(randomFact => setRandomFact(randomFact))
-    }
+    }, [])
 
     return(
         <>
