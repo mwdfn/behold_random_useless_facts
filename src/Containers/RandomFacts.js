@@ -12,12 +12,13 @@ const RandomFacts = () => {
 
     return(
         <>
-            <h1>I'm where a random fact will appear!</h1>
+            <h1>Behold! Random Useless Facts!</h1>
             <ul>
                 <li>{randomFact.text}</li>
                 <br/>
                 <li>Source: {randomFact.source} ({randomFact.source_url})</li>
             </ul>
+            <button>Get A New Fact</button>
         </>
     )
 
