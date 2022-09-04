@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Routes, Route, Link } from 'react-router-dom';
+import { Button } from "@mui/material";
+import SentimentVerySatisfiedIcon from '@mui/icons-material/SentimentVerySatisfied';
 
 const RandomFacts = () => {
     const [randomFact, setRandomFact] = useState('');
@@ -23,7 +25,9 @@ const RandomFacts = () => {
                 <br/>
                 <li>Source: {randomFact.source} ({randomFact.source_url})</li>
             </ul>
-            <button onClick={getFact}>Get Fact!</button>
+            <Button variant="contained" size="large" color="inherit" endIcon={<SentimentVerySatisfiedIcon/>} onClick={getFact}>
+                Get Fact!
+            </Button>
             <br/>
             <footer>* Please be aware that the creator of this site does not necessarily endorse any fact presented here as being true. User discretion is advised.</footer>
         </>
