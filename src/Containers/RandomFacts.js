@@ -25,7 +25,7 @@ const RandomFacts = () => {
             </ul>
             <button onClick={getFact}>Get Fact!</button>
             <br/>
-            <footer>* Please be aware that the creater of this site does not necessarily endorse any fact presented here as being true. User discretion is advised.</footer>
+            <footer>* Please be aware that the creator of this site does not necessarily endorse any fact presented here as being true. User discretion is advised.</footer>
         </>
     );
 
