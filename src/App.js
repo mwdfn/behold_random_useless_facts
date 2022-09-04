@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useMemo } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import RandomFacts from './Containers/RandomFacts';
 import useMediaQuery from '@mui/material/useMediaQuery';
@@ -12,9 +12,31 @@ import Brightness7Icon from '@mui/icons-material/Brightness7';
 const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
 
 function App() {
-  const theme = useTheme();
-  const colorMode = React.useContext(ColorModeContext);
+
+  const mainTheme = useTheme();
+  const [mode, setMode] = useState('light');
+  const colorMode = useMemo(
+  () => ({
+      toggleColorMode: () => {
+      setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
+      },
+  }),
+  [],
+  );
+
+  const theme = React.useMemo(() =>
+    createTheme({
+      palette: {
+          mode,
+      },
+      }),
+    [mode],
+  );
+
   return (
+    <>
+        <ColorModeContext.Provider value={colorMode}>
+      <ThemeProvider theme={mainTheme}>
     <Box
       sx={{
         display: 'flex',
@@ -32,37 +54,11 @@ function App() {
         {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
       </IconButton>
     </Box>
-  );
-}
-
-const ToggleColorMode = () => {
-  const [mode, setMode] = React.useState('light');
-  const colorMode = React.useMemo(
-    () => ({
-      toggleColorMode: () => {
-        setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
-      },
-    }),
-    [],
-  );
-
-  const theme = React.useMemo(
-    () =>
-      createTheme({
-        palette: {
-          mode,
-        },
-      }),
-    [mode],
-  );
-
-  return (
-    <ColorModeContext.Provider value={colorMode}>
-      <ThemeProvider theme={theme}>
-        <CssBaseline/>
-        <RandomFacts/>
+        <CssBaseline />
+        <RandomFacts />
       </ThemeProvider>
     </ColorModeContext.Provider>
+    </>
   );
 }
 
