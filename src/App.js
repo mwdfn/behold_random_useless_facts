@@ -1,6 +1,6 @@
 import React, { useState, useMemo, createContext } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
-import RandomFacts from './Containers/RandomFacts';
+import RandomFactContainer from './Containers/RandomFactContainer';
 import CssBaseline from '@mui/material/CssBaseline';
 import IconButton from '@mui/material/IconButton';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
@@ -37,7 +37,7 @@ function App() {
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <RandomFacts />
+        <RandomFactContainer />
       </ThemeProvider>
     </ColorModeContext.Provider>
     </>
