@@ -10,15 +10,19 @@ const RandomFacts = () => {
         .then(randomFact => setRandomFact(randomFact))
     }, []);
 
+    const getFact = () => {}
+
     return(
         <>
-            <h1>Behold! Random Useless Facts!</h1>
+            <h1>Behold! Random Useless Facts*!</h1>
             <ul>
                 <li>{randomFact.text}</li>
                 <br/>
                 <li>Source: {randomFact.source} ({randomFact.source_url})</li>
             </ul>
-            <button>Get A New Fact</button>
+            <button onClick={getFact}>Get A New Fact</button>
+            <br/>
+            <footer>* Please be aware that the creater of this site does not necessarily endorse any fact presented here as being true. User discretion is advised.</footer>
         </>
     );
 
