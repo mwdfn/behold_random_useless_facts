@@ -7,7 +7,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 
-const ColorModeContext = createContext({ toggleColorMode: () => {} });
+const ColorModeContext = createContext({toggleColorMode: () => {} });
 
 function App() {
   const [mode, setMode] = useState('light');
@@ -30,14 +30,16 @@ function App() {
 
   return (
     <>
-    {theme.palette.mode} mode
-    <IconButton sx={{ ml: 1 }} onClick={colorMode.toggleColorMode} color="inherit">
-      {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
-    </IconButton>
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
+        {theme.palette.mode} mode
+      <div className='fact-container'>
+        <IconButton sx={{ ml: 1 }} onClick={colorMode.toggleColorMode} color="inherit">
+          {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
+        </IconButton>
         <RandomFactContainer />
+      </div>
       </ThemeProvider>
     </ColorModeContext.Provider>
     </>
