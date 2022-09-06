@@ -2,6 +2,7 @@
   text-align: center;
   max-width: 100vw;
   max-height: auto;
+  overflow: hidden;
 }
 
 .fact-container {
@@ -9,9 +10,13 @@
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-rows: auto;
   grid-template-areas:
-    ". . ."
+    ". . mode"
     ". fact ."
     "footer footer footer";
+}
+
+.dark-mode-button {
+  grid-area: mode;
 }
 
 .fact-content {
