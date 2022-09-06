@@ -19,16 +19,17 @@ const RandomFacts = () => {
 
     return(
         <>
-            <h1>Behold! Random Useless Facts*!</h1>
-            <ul>
-                <li>{randomFact.text}</li>
-                <br/>
-                <li>Source: {randomFact.source} ({randomFact.source_url})</li>
-            </ul>
-            <Button variant="contained" size="large" color="inherit" endIcon={<SentimentVerySatisfiedIcon/>} onClick={getFact}>
-                Get Fact!
-            </Button>
-            <br/>
+            <div className="fact-content">
+                <h1>Behold! Random Useless Facts*!</h1>
+                <ul>
+                    <li>{randomFact.text}</li>
+                    <br/>
+                    <li>Source: {randomFact.source} ({randomFact.source_url})</li>
+                </ul>
+                <Button variant="contained" size="large" color="inherit" endIcon={<SentimentVerySatisfiedIcon/>} onClick={getFact}>
+                    Get Fact!
+                </Button>
+            </div>
             <footer>* Please be aware that the creator of this site does not necessarily endorse information presented here as being fact. User discretion is advised.</footer>
         </>
     );

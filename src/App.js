@@ -1,3 +1,4 @@
+import './App.css';
 import React, { useState, useMemo, createContext } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import RandomFactContainer from './Containers/RandomFactContainer';
