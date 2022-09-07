@@ -18,15 +18,17 @@ const RandomFacts = () => {
 
 
     return(
-        <>
-            <div className="fact-content">
+        <>  
+            <div className="app-title">
                 <h1>Behold! Random Useless Facts*!</h1>
+            </div>
+            <div className="fact-content">
                 <ul>
                     <li>{randomFact.text}</li>
                     <br/>
                     <li>Source: {randomFact.source} ({randomFact.source_url})</li>
                 </ul>
-                <Button variant="contained" size="large" color="inherit" endIcon={<SentimentVerySatisfiedIcon/>} onClick={getFact}>
+                <Button variant="contained" size="large" color="inherit" endIcon={<SentimentVerySatisfiedIcon/>} onClick={getFact} className="get-button">
                     Get Fact!
                 </Button>
             </div>
