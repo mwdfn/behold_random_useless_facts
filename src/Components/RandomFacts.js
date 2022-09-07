@@ -16,19 +16,18 @@ const RandomFacts = () => {
         .then(randomFact => setRandomFact(randomFact))
     }
 
-
     return(
         <>  
             <div className="app-title">
                 <h1>Behold! Random Useless Facts*!</h1>
             </div>
             <div className="fact-content">
-                <ul>
-                    <li>{randomFact.text}</li>
-                    <br/>
-                    <li>Source: {randomFact.source} ({randomFact.source_url})</li>
-                </ul>
-                <Button variant="contained" size="large" color="inherit" endIcon={<SentimentVerySatisfiedIcon/>} onClick={getFact} className="get-button">
+                <p>{randomFact.text}</p>
+                <br/>
+                <a>Source: {randomFact.source} ({randomFact.source_url})</a>
+            </div>
+            <div className="get-button">
+                <Button variant="contained" size="large" color="inherit" endIcon={<SentimentVerySatisfiedIcon/>} onClick={getFact}>
                     Get Fact!
                 </Button>
             </div>

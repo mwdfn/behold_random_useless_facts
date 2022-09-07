@@ -4,7 +4,6 @@
   max-height: 100%;
   overflow: hidden;
   list-style-type: none;
-
 }
 
 .fact-container {
@@ -15,6 +14,7 @@
   grid-template-areas:
     ". title mode"
     ". fact ."
+    ". button ."
     "footer footer footer";
 }
 
@@ -35,14 +35,15 @@
   grid-area: fact;
   padding: 3vw 5vw 5vw;
   justify-self: center;
+  text-align: center;
 }
 
 .get-button {
   justify-self: center;
-  
+  grid-area: button;
 }
 
 footer {
   grid-area: footer;
-  padding: 10vw;
+  padding: 2vw;
 }
