@@ -24,7 +24,7 @@ const RandomFacts = () => {
             <div className="fact-content">
                 <p>{randomFact.text}</p>
                 <br/>
-                <a>Source: {randomFact.source} ({randomFact.source_url})</a>
+                <a className="source">Source: {randomFact.source} ({randomFact.source_url})</a>
             </div>
             <div className="get-button">
                 <Button variant="contained" size="large" color="inherit" endIcon={<SentimentVerySatisfiedIcon/>} onClick={getFact}>
